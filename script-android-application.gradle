@@ -1,0 +1,10 @@
+apply plugin: 'com.android.application'
+apply from: "${rootProject.projectDir}/script-android-common.gradle"
+
+android {
+    defaultConfig {
+        applicationId "com.github.iojjj.bootstrap.qatoolkit"
+        versionCode 1
+        versionName "1.0"
+    }
+}

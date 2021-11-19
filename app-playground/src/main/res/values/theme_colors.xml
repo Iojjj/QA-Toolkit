@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- DayNight aware -->
+    <color name="background">#ffffff</color>
+    <color name="background_1dp">#ffffff</color>
+    <color name="background_2dp">#ffffff</color>
+    <color name="background_3dp">#ffffff</color>
+    <color name="background_4dp">#ffffff</color>
+    <color name="background_6dp">#ffffff</color>
+    <color name="background_8dp">#ffffff</color>
+    <color name="background_12dp">#ffffff</color>
+    <color name="background_14dp">#ffffff</color>
+    <color name="background_16dp">#ffffff</color>
+    <color name="background_24dp">#ffffff</color>
+    <color name="primary">#1976d2</color>
+    <color name="primary_variant">#004ba0</color>
+    <color name="on_primary">@color/white</color>
+    <color name="on_primary_variant">@color/white</color>
+    <color name="secondary">#4caf50</color>
+    <color name="secondary_variant">#087f23</color>
+    <color name="on_secondary">@color/black</color>
+    <color name="on_secondary_variant">@color/white</color>
+
+    <!-- Other -->
+    <color name="black">#000000</color>
+    <color name="white">#ffffff</color>
+</resources>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="qatoolkit_inspector_hierarchy_not_captured"><![CDATA[Window content is not captured.\n\nTo capture window content exit Inspect Mode and try to update window content by doing one of these:\n\n1. Move application to background and back to foreground.\n2. Open recent apps screen, then return back to application.\n3. Perform navigation within application (i.e. navigate back or forward).]]></string>
+    <string name="qatoolkit_inspector_settings_item_node_stroke_scale">Stroke Scale</string>
+    <string name="qatoolkit_inspector_settings_item_node_stroke_color">Stroke Color</string>
+    <string name="qatoolkit_inspector_settings_item_selected_stroke_color">Selected Stroke Color</string>
+    <string name="qatoolkit_inspector_settings_item_pinned_stroke_color">Pinned Stroke Color</string>
+    <string name="qatoolkit_inspector_settings_item_overlay_color">Overlay Color</string>
+    <string name="qatoolkit_inspector_settings_item_arrow_color">Arrow Color</string>
+    <string name="qatoolkit_inspector_settings_item_text_scale">Text Scale</string>
+    <string name="qatoolkit_inspector_settings_item_text_color">Text Color</string>
+
+    <string name="qatoolkit_inspector_details_action_search">Search</string>
+    <string name="qatoolkit_inspector_details_query_hint">Attribute name</string>
+    <string name="qatoolkit_inspector_details_attributes_title_information">Information</string>
+    <string name="qatoolkit_inspector_details_attributes_title_warning">Warning</string>
+    <string name="qatoolkit_inspector_details_attributes_reason_ok">Displayed attributes provided by QA Toolkit Bridge Service.</string>
+    <string name="qatoolkit_inspector_details_attributes_reason_bridge_not_configured">Currently inspected application doesn\'t have QA Toolkit Bridge Service installed.\n\nDisplayed attributes provided by accessibility service.</string>
+    <string name="qatoolkit_inspector_details_attributes_reason_connection_issue">Can\'t connect to QA Toolkit Bridge Service.\n\nDisplayed attributes provided by accessibility service.</string>
+    <string name="qatoolkit_inspector_details_attributes_reason_view_not_found">QA Toolkit Bridge Service can\'t find selected view. Move application to background, restore it and try again.\n\nDisplayed attributes provided by accessibility service.</string>
+    <string name="qatoolkit_inspector_details_attributes_reason_virtual_view"><![CDATA[QA Toolkit Bridge Service can\'t provide attributes for selected view.<br/><br/>Either view is virtual, or its accessibility delegate has been overridden. For more information about virtual views check \"<a href="https://developer.android.com/guide/topics/ui/accessibility/custom-views#virtual-hierarchy">Provide a customized accessibility context</a>\" section.<br/><br/>Displayed attributes provided by accessibility service.]]></string>
+    <string name="qatoolkit_inspector_details_attributes_reason_internal_error">There was an error during communication with QA Toolkit Bridge Service. Either QA Toolkit Bridge Service or QA Toolkit app is outdated.\n\nDisplayed attributes provided by accessibility service.</string>
+</resources>

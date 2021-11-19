@@ -1,0 +1,31 @@
+rootProject.name = "QA Toolkit"
+
+include ':app-playground'
+include ':app-qatoolkit'
+include ':app-qatoolkit-core'
+include ':app-qatoolkit-compose-core'
+include ':app-qatoolkit-colorpicker'
+include ':app-qatoolkit-grid'
+include ':app-qatoolkit-inspector'
+include ':app-qatoolkit-inspector-details'
+include ':app-qatoolkit-ruler'
+include ':app-qatoolkit-settings'
+include ':app-qatoolkit-toolkitbar'
+
+[
+        "bs-core",
+//        "bs-test",
+        "bs-android-reflection",
+        "bs-qatoolkit-bridge",
+        "bs-qatoolkit-bridge-core",
+        "bs-qatoolkit-inspector-core",
+        "bs-qatoolkit-inspector-attribute",
+        "bs-qatoolkit-inspector-dsl",
+        "bs-qatoolkit-inspector-layout",
+        "bs-qatoolkit-inspector-android",
+        "bs-qatoolkit-inspector-appcompat",
+].each {
+    include ":$it"
+    project(":$it").projectDir = file("../Bootstrap/$it")
+}
+

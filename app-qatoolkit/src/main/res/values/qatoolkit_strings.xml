@@ -1,0 +1,5 @@
+<resources>
+    <string name="qatoolkit_app_name">QA Toolkit</string>
+    <string name="qatoolkit_accessibility_service_label">@string/qatoolkit_app_name</string>
+    <string name="qatoolkit_accessibility_service_description">This is NOT an accessibility service.\n\nThis service helps Software and QA engineers to inspect application layouts.\n\nIncludes tools:\n\nLayout inspector.\nTool that can inspect any view\'s attributes and measure margin between views.\n\nGrid.\nTool that allows to quickly check alignment of views.\n\nRuler.\nTool that allows to measure horizontal or vertical distances between anchor points.</string>
+</resources>

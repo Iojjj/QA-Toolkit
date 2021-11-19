@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="qatoolkit_grid_settings_item_stroke_scale">Stroke Scale</string>
+    <string name="qatoolkit_grid_settings_item_stroke_color">Stroke Color</string>
+    <string name="qatoolkit_grid_settings_item_grid_size">Grid Size</string>
+    <string name="qatoolkit_grid_settings_item_cell_size">Cell Size</string>
+</resources>

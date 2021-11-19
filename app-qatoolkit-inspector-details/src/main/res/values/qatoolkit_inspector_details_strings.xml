@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="qatoolkit_inspector_details_title">Attributes</string>
+    <string name="qatoolkit_inspector_details_action_search">Search</string>
+    <string name="qatoolkit_inspector_details_action_ok">OK</string>
+    <string name="qatoolkit_inspector_details_query_hint">Attribute name</string>
+    <string name="qatoolkit_inspector_details_attributes_title_information">Information</string>
+    <string name="qatoolkit_inspector_details_attributes_title_warning">Warning</string>
+    <string name="qatoolkit_inspector_details_attributes_status_ok">Displayed attributes provided by QA Toolkit Bridge Service.</string>
+    <string name="qatoolkit_inspector_details_attributes_status_bridge_not_configured">Currently inspected application doesn\'t have QA Toolkit Bridge Service installed.\n\nDisplayed attributes provided by accessibility service.</string>
+    <string name="qatoolkit_inspector_details_attributes_status_connection_issue">Can\'t connect to QA Toolkit Bridge Service.\n\nDisplayed attributes provided by accessibility service.</string>
+    <string name="qatoolkit_inspector_details_attributes_status_view_not_found">QA Toolkit Bridge Service can\'t find selected view. Move application to background, restore it and try again.\n\nDisplayed attributes provided by accessibility service.</string>
+    <string name="qatoolkit_inspector_details_attributes_status_virtual_view">QA Toolkit Bridge Service can\'t provide attributes for selected view. Possible reasons:\n\n1. This is a system view. Only views that belong to application can be inspected with extra details.\n2. Accessibility delegate for this view was manually overridden.\n3. This is a \"virtual\" view.\n\nDisplayed attributes provided by accessibility service.</string>
+    <string name="qatoolkit_inspector_details_attributes_status_internal_error">There was an error during communication with QA Toolkit Bridge Service. Either QA Toolkit Bridge Service or QA Toolkit app is outdated.\n\nDisplayed attributes provided by accessibility service.</string>
+    <string name="qatoolkit_inspector_details_attributes_not_found">No attributes found for selected view.</string>
+    <string name="qatoolkit_inspector_details_attributes_not_found_search_query">No attributes found matching \"%s\".</string>
+</resources>

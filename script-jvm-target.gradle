@@ -1,0 +1,7 @@
+allprojects {
+    ext.jvmTargetVersion = JavaVersion.VERSION_11.toString()
+    tasks.withType(JavaCompile).all {
+        targetCompatibility jvmTargetVersion
+        sourceCompatibility jvmTargetVersion
+    }
+}

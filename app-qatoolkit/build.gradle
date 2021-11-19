@@ -1,0 +1,36 @@
+apply from: "${rootProject.rootDir}/script-android-application.gradle"
+apply from: "${rootProject.rootDir}/script-compose.gradle"
+
+dependencies {
+
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android'
+
+    implementation 'androidx.core:core-ktx'
+    implementation 'androidx.appcompat:appcompat'
+    implementation "androidx.lifecycle:lifecycle-extensions"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx"
+
+    implementation 'androidx.compose.ui:ui'
+    implementation 'androidx.compose.foundation:foundation'
+    implementation "androidx.compose.material:material"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-compose"
+    implementation "androidx.navigation:navigation-compose"
+    implementation "com.google.accompanist:accompanist-insets"
+
+    implementation project(':app-qatoolkit-core')
+    implementation project(':app-qatoolkit-compose-core')
+    implementation project(':app-qatoolkit-colorpicker')
+    implementation project(':app-qatoolkit-grid')
+    implementation project(':app-qatoolkit-inspector')
+    implementation project(':app-qatoolkit-inspector-details')
+    implementation project(':app-qatoolkit-ruler')
+    implementation project(':app-qatoolkit-toolkitbar')
+    implementation project(':app-qatoolkit-settings')
+
+    implementation project(':bs-android-reflection')
+    implementation project(':bs-core')
+
+    implementation project(':bs-qatoolkit-bridge-core')
+    implementation project(':bs-qatoolkit-inspector-layout')
+    implementation project(':bs-qatoolkit-inspector-attribute')
+}

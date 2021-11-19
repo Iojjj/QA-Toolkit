@@ -1,0 +1,6 @@
+apply from: "$projectDir/../script-android-library.gradle"
+apply from: "$projectDir/../script-compose.gradle"
+
+dependencies {
+    implementation "androidx.compose.runtime:runtime"
+}

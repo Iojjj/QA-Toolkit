@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="qatoolkit_ruler_settings_item_stroke_scale">Stroke Scale</string>
+    <string name="qatoolkit_ruler_settings_item_stroke_color">Stroke Color</string>
+    <string name="qatoolkit_ruler_settings_item_text_scale">Text Scale</string>
+    <string name="qatoolkit_ruler_settings_item_text_color">Text Color</string>
+    <string name="qatoolkit_ruler_settings_item_sensitivity">Sensitivity</string>
+</resources>
