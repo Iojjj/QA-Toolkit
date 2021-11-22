@@ -1,6 +1,5 @@
 package com.github.iojjj.bootstrap.qatoolkit.toolkitbar
 
-import android.graphics.Point
 import android.util.DisplayMetrics
 import android.view.WindowManager
 import android.view.WindowManager.LayoutParams.WRAP_CONTENT
@@ -29,6 +28,7 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.State
 import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.derivedStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
@@ -40,6 +40,7 @@ import androidx.compose.ui.input.pointer.PointerInputScope
 import androidx.compose.ui.input.pointer.consumeAllChanges
 import androidx.compose.ui.input.pointer.util.VelocityTracker
 import androidx.compose.ui.layout.onSizeChanged
+import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.IntRect
@@ -52,7 +53,6 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import com.github.iojjj.bootstrap.pub.core.exhaustive
-import com.github.iojjj.bootstrap.pub.core.logger.Logger
 import com.github.iojjj.bootstrap.pub.core.view.delayUntilNextLayout
 import com.github.iojjj.bootstrap.qatoolkit.compose.core.unit.maxDimension
 import com.github.iojjj.bootstrap.qatoolkit.core.Orientation
@@ -511,25 +511,49 @@ private fun UpdateWindowLocationEffect(
     }
 }
 
+// TODO Improve orientation changes handling. At this moment app incorrectly adjusts screen bounds as well as doesn't work well
+//  when landscape is initial orientation.
 @Composable
 private fun rememberScreenBoundsState(): State<IntRect> {
+    val screenSizeState = rememberScreenSizeState()
+    val insetsState = rememberInsetsState()
+    return derivedStateOf {
+        val screenSize = screenSizeState.value
+        val newInsets = insetsState.value
+        IntRect(
+            left = newInsets.left,
+            top = newInsets.top,
+            right = screenSize.width - newInsets.right,
+            bottom = screenSize.height - newInsets.top,
+        )
+    }
+}
+
+@Composable
+private fun rememberScreenSizeState(): State<IntSize> {
+    val view = LocalView.current
+    val screenSizeState = remember { mutableStateOf(IntSize.Zero) }
+    val orientation = LocalConfiguration.current.orientation
+    LaunchedEffect(orientation) {
+        val displayMetrics = DisplayMetrics()
+        val windowManager = view.context.getSystemService<WindowManager>()!!
+        val display = windowManager.defaultDisplay
+        display.getRealMetrics(displayMetrics)
+        screenSizeState.value = IntSize(displayMetrics.widthPixels, displayMetrics.heightPixels)
+    }
+    return screenSizeState
+}
+
+@Composable
+private fun rememberInsetsState(): State<Insets> {
     val view = LocalView.current
     return remember(view) {
         var okInsets = Insets.Empty
-        val boundsState = mutableStateOf(IntRect.Zero)
-        val displayMetrics = DisplayMetrics()
-        val point = Point()
-        val windowManager = view.context.getSystemService<WindowManager>()!!
-        windowManager.defaultDisplay.getRealMetrics(displayMetrics)
-        windowManager.defaultDisplay.getSize(point)
-        val screenSize = IntSize(displayMetrics.widthPixels, displayMetrics.heightPixels)
-        val contentSize = IntSize(point.x, point.y)
-
+        val insetsState = mutableStateOf(Insets.Empty)
         ViewCompat.setOnApplyWindowInsetsListener(view) { _, insets ->
             val displayCutout = insets.getInsetsIgnoringVisibility(displayCutout())
             val statusBars = insets.getInsetsIgnoringVisibility(statusBars())
             val affectedInsets = androidx.core.graphics.Insets.max(displayCutout, statusBars)
-            Logger.DEFAULT.debug { "insets: $affectedInsets" }
             val newInsets = Insets.Insets(affectedInsets.left, affectedInsets.top, affectedInsets.right, affectedInsets.bottom)
             if (newInsets.isOnlyTopChanged(okInsets) && !okInsets.isEmpty()) {
                 // Skip
@@ -537,15 +561,10 @@ private fun rememberScreenBoundsState(): State<IntRect> {
                 if (okInsets.isEmpty()) {
                     okInsets = newInsets
                 }
-                boundsState.value = IntRect(
-                    left = newInsets.left,
-                    top = newInsets.top,
-                    right = screenSize.width - newInsets.right,
-                    bottom = screenSize.height - affectedInsets.top,
-                )
+                insetsState.value = newInsets
             }
             insets
         }
-        boundsState
+        insetsState
     }
 }
