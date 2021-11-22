@@ -12,9 +12,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.text.AnnotatedString
 import com.github.iojjj.bootstrap.pub.qatoolkit.inspector.attribute.DimensionAttribute
+import com.github.iojjj.bootstrap.pub.qatoolkit.inspector.attribute.DimensionType
 import com.github.iojjj.bootstrap.qatoolkit.compose.core.LocalDpFormatter
 import com.github.iojjj.bootstrap.qatoolkit.compose.core.LocalPxFormatter
-import com.github.iojjj.bootstrap.qatoolkit.core.DimensionType
 
 @Composable
 internal fun AttributeDimension(

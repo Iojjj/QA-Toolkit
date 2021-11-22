@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.graphics.painter.BitmapPainter
 import androidx.compose.ui.text.AnnotatedString
 import com.github.iojjj.bootstrap.pub.qatoolkit.inspector.attribute.BitmapAttribute
