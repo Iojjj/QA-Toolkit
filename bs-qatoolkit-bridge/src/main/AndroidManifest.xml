@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.github.iojjj.bootstrap.qatoolkit.bridge"
+    >
+
+    <application>
+
+        <provider
+            android:name="com.github.iojjj.bootstrap.internal.qatoolkit.bridge.QaToolkitBridgeInstaller"
+            android:authorities="${applicationId}.qa-toolkit-bridge-installer"
+            android:enabled="@bool/qatoolkit_bridge_auto_install"
+            android:exported="false"
+            />
+
+        <service
+            android:name="com.github.iojjj.bootstrap.internal.qatoolkit.bridge.QaToolkitBridgeService"
+            android:enabled="true"
+            android:foregroundServiceType="connectedDevice"
+            android:exported="true"
+            />
+
+    </application>
+
+</manifest>

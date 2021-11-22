@@ -1,0 +1,49 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'kotlin-parcelize'
+    id 'kotlin-kapt'
+}
+
+android {
+    compileSdkVersion 31
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 31
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility jvmTargetVersion
+        targetCompatibility jvmTargetVersion
+    }
+    kotlinOptions {
+        jvmTarget = jvmTargetVersion
+    }
+}
+
+dependencies {
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib"
+    implementation 'androidx.core:core-ktx'
+    implementation 'androidx.appcompat:appcompat'
+    implementation project(":bs-core")
+    implementation project(":bs-qatoolkit-inspector-attribute")
+
+    compileOnly 'org.atteo.classindex:classindex'
+    kapt 'org.atteo.classindex:classindex'
+}
+
+kapt {
+    correctErrorTypes true
+}

@@ -2,6 +2,7 @@ rootProject.name = "QA Toolkit"
 
 include ':app-playground'
 include ':app-qatoolkit'
+
 include ':qatoolkit-core'
 include ':qatoolkit-compose-core'
 include ':qatoolkit-colorpicker'
@@ -12,18 +13,18 @@ include ':qatoolkit-ruler'
 include ':qatoolkit-settings'
 include ':qatoolkit-toolkitbar'
 
+include 'bs-qatoolkit-bridge'
+include 'bs-qatoolkit-bridge-core'
+include 'bs-qatoolkit-inspector-core'
+include 'bs-qatoolkit-inspector-attribute'
+include 'bs-qatoolkit-inspector-dsl'
+include 'bs-qatoolkit-inspector-layout'
+include 'bs-qatoolkit-inspector-android'
+include 'bs-qatoolkit-inspector-appcompat'
+
 [
         "bs-core",
-//        "bs-test",
         "bs-android-reflection",
-        "bs-qatoolkit-bridge",
-        "bs-qatoolkit-bridge-core",
-        "bs-qatoolkit-inspector-core",
-        "bs-qatoolkit-inspector-attribute",
-        "bs-qatoolkit-inspector-dsl",
-        "bs-qatoolkit-inspector-layout",
-        "bs-qatoolkit-inspector-android",
-        "bs-qatoolkit-inspector-appcompat",
 ].each {
     include ":$it"
     project(":$it").projectDir = file("../Bootstrap/$it")
