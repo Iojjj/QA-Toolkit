@@ -383,63 +383,114 @@ private fun InitializeWindowLocationEffect(
 ) {
     val toolkitBarSize = toolkitBarSizeState.value
     val screenBounds = screenBoundsState.value
+
+    if (toolkitBarSize == IntSize.Zero || screenBounds == IntRect.Zero || screenBounds.top == 0) {
+        return
+    }
+
+    val previousScreenBounds = remember { mutableStateOf(IntRect.Zero) }
+
     LaunchedEffect(toolkitBarSize, screenBounds) {
         val offsetX = animatableOffset.value.x
         val offsetY = animatableOffset.value.y
-        if (!isReadyState.value && toolkitBarSize != IntSize.Zero && screenBounds != IntRect.Zero) {
-            val initializeLocation = offsetX < 0 || offsetY < 0
-            exhaustive..when (orientationState.value) {
-                Orientation.HORIZONTAL -> {
-                    if (initializeLocation) {
-                        animatableOffset.snapTo(
-                            Offset(
-                                screenBounds.center.x - toolkitBarSize.width / 2.0f,
-                                screenBounds.top.toFloat()
-                            )
-                        )
-                    }
-                    val initialOffset = if (offsetY == screenBounds.top.toFloat()) {
-                        Offset(
-                            0.0f,
-                            -(toolkitBarSize.height + screenBounds.top).toFloat(),
-                        )
-                    } else {
-                        Offset(
-                            0.0f,
-                            (toolkitBarSize.height + screenBounds.bottom).toFloat(),
-                        )
-                    }
-                    boxOffset.snapTo(initialOffset)
-                    isReadyState.value = true
-                    boxOffset.animateTo(initialOffset.copy(y = 0.0f))
-                }
-                Orientation.VERTICAL -> {
-                    if (initializeLocation) {
-                        animatableOffset.snapTo(
-                            Offset(
-                                screenBounds.left.toFloat(),
-                                screenBounds.center.y - toolkitBarSize.height / 2.0f
-                            )
-                        )
-                    }
-                    val initialOffset = if (offsetX == screenBounds.left.toFloat()) {
-                        Offset(
-                            -(toolkitBarSize.width + screenBounds.left).toFloat(),
-                            0.0f
-                        )
-                    } else {
-                        Offset(
-                            (toolkitBarSize.width + screenBounds.right).toFloat(),
-                            0.0f
-                        )
-                    }
-                    boxOffset.snapTo(initialOffset)
-                    isReadyState.value = true
-                    boxOffset.animateTo(initialOffset.copy(x = 0.0f))
-                }
+
+        // Initialize window position on the first run.
+        if (offsetX < 0 || offsetY < 0) {
+            initializeLocation(orientationState, animatableOffset, toolkitBarSize, screenBounds)
+        }
+
+        // If top inset changed and current view position within new inset, adjust window position.
+        if (previousScreenBounds.value.top != screenBounds.top && offsetY in 0.0f..screenBounds.top.toFloat()) {
+            animatableOffset.animateTo(Offset(offsetX, screenBounds.top.toFloat()))
+        }
+
+        exhaustive..when (orientationState.value) {
+            Orientation.HORIZONTAL -> {
+                animateHorizontalAppearance(offsetY, boxOffset, isReadyState, toolkitBarSize, screenBounds)
+            }
+            Orientation.VERTICAL -> {
+                animateVerticalAppearance(offsetX, boxOffset, isReadyState, toolkitBarSize, screenBounds)
             }
         }
+
+        previousScreenBounds.value = screenBounds
     }
+}
+
+private suspend fun initializeLocation(
+    orientationState: State<Orientation>,
+    animatableOffset: Animatable<Offset, AnimationVector2D>,
+    toolkitBarSize: IntSize,
+    screenBounds: IntRect,
+) {
+    exhaustive..when (orientationState.value) {
+        Orientation.HORIZONTAL -> {
+            animatableOffset.snapTo(
+                Offset(
+                    screenBounds.center.x - toolkitBarSize.width / 2.0f,
+                    screenBounds.top.toFloat()
+                )
+            )
+        }
+        Orientation.VERTICAL -> {
+            animatableOffset.snapTo(
+                Offset(
+                    screenBounds.left.toFloat(),
+                    screenBounds.center.y - toolkitBarSize.height / 2.0f
+                )
+            )
+        }
+    }
+}
+
+private suspend fun animateHorizontalAppearance(
+    offsetY: Float,
+    boxOffset: Animatable<Offset, AnimationVector2D>,
+    isReadyState: MutableState<Boolean>,
+    toolkitBarSize: IntSize,
+    screenBounds: IntRect,
+) {
+    val initialOffset = if (offsetY in 0.0f..screenBounds.top.toFloat()) {
+        Offset(
+            0.0f,
+            -(toolkitBarSize.height + screenBounds.top).toFloat(),
+        )
+    } else {
+        Offset(
+            0.0f,
+            (toolkitBarSize.height + screenBounds.bottom).toFloat(),
+        )
+    }
+    if (!isReadyState.value) {
+        boxOffset.snapTo(initialOffset)
+    }
+    isReadyState.value = true
+    boxOffset.animateTo(initialOffset.copy(y = 0.0f))
+}
+
+private suspend fun animateVerticalAppearance(
+    offsetX: Float,
+    boxOffset: Animatable<Offset, AnimationVector2D>,
+    isReadyState: MutableState<Boolean>,
+    toolkitBarSize: IntSize,
+    screenBounds: IntRect,
+) {
+    val initialOffset = if (offsetX in 0.0f..screenBounds.left.toFloat()) {
+        Offset(
+            -(toolkitBarSize.width + screenBounds.left).toFloat(),
+            0.0f
+        )
+    } else {
+        Offset(
+            (toolkitBarSize.width + screenBounds.right).toFloat(),
+            0.0f
+        )
+    }
+    if (!isReadyState.value) {
+        boxOffset.snapTo(initialOffset)
+    }
+    isReadyState.value = true
+    boxOffset.animateTo(initialOffset.copy(x = 0.0f))
 }
 
 @Composable
