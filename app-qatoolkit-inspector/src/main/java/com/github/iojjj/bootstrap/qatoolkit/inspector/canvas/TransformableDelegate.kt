@@ -22,12 +22,16 @@ internal class TransformableDelegate(
     override fun toDrawOffset(
         offset: Offset,
     ): Offset {
-        val asViewportX = AXIS_X_MIN + offset.x / canvasSize.width * AXIS_X_LENGTH
-        val asViewportY = AXIS_Y_MIN + offset.y / canvasSize.height * AXIS_Y_LENGTH
-        return Offset(
-            x = canvasSize.width * (asViewportX - viewport.left) / viewport.width,
-            y = canvasSize.height * (asViewportY - viewport.top) / viewport.height,
-        )
+        return if (canvasSize == IntSize.Zero || viewport.isEmpty) {
+            Offset.Zero
+        } else {
+            val asViewportX = AXIS_X_MIN + offset.x / canvasSize.width * AXIS_X_LENGTH
+            val asViewportY = AXIS_Y_MIN + offset.y / canvasSize.height * AXIS_Y_LENGTH
+            Offset(
+                x = canvasSize.width * (asViewportX - viewport.left) / viewport.width,
+                y = canvasSize.height * (asViewportY - viewport.top) / viewport.height,
+            )
+        }
     }
 
     override fun toDrawOffset(offset: IntOffset): IntOffset {

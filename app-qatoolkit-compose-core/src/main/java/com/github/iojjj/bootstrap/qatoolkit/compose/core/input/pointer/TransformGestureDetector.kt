@@ -90,8 +90,10 @@ suspend fun PointerInputScope.detectTransformGestures(
                                 onGestureStart?.invoke()
                                 gestureDetected = true
                             }
-                            val change = event.changes.fastFirstOrNull { it.id == down.id }!!
-                            onGesture(change, centroid, panChange, zoomChange, effectiveRotation)
+                            val change = event.changes.fastFirstOrNull { it.id == down.id }
+                            if (change != null) {
+                                onGesture(change, centroid, panChange, zoomChange, effectiveRotation)
+                            }
                         }
                         event.changes.fastForEach {
                             if (it.positionChanged()) {
