@@ -17,15 +17,15 @@ dependencies {
     implementation "androidx.navigation:navigation-compose"
     implementation "com.google.accompanist:accompanist-insets"
 
-    implementation project(':app-qatoolkit-core')
-    implementation project(':app-qatoolkit-compose-core')
-    implementation project(':app-qatoolkit-colorpicker')
-    implementation project(':app-qatoolkit-grid')
-    implementation project(':app-qatoolkit-inspector')
-    implementation project(':app-qatoolkit-inspector-details')
-    implementation project(':app-qatoolkit-ruler')
-    implementation project(':app-qatoolkit-toolkitbar')
-    implementation project(':app-qatoolkit-settings')
+    implementation project(':qatoolkit-core')
+    implementation project(':qatoolkit-compose-core')
+    implementation project(':qatoolkit-colorpicker')
+    implementation project(':qatoolkit-grid')
+    implementation project(':qatoolkit-inspector')
+    implementation project(':qatoolkit-inspector-details')
+    implementation project(':qatoolkit-ruler')
+    implementation project(':qatoolkit-toolkitbar')
+    implementation project(':qatoolkit-settings')
 
     implementation project(':bs-android-reflection')
     implementation project(':bs-core')

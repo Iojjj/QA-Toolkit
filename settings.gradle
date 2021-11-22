@@ -2,15 +2,15 @@ rootProject.name = "QA Toolkit"
 
 include ':app-playground'
 include ':app-qatoolkit'
-include ':app-qatoolkit-core'
-include ':app-qatoolkit-compose-core'
-include ':app-qatoolkit-colorpicker'
-include ':app-qatoolkit-grid'
-include ':app-qatoolkit-inspector'
-include ':app-qatoolkit-inspector-details'
-include ':app-qatoolkit-ruler'
-include ':app-qatoolkit-settings'
-include ':app-qatoolkit-toolkitbar'
+include ':qatoolkit-core'
+include ':qatoolkit-compose-core'
+include ':qatoolkit-colorpicker'
+include ':qatoolkit-grid'
+include ':qatoolkit-inspector'
+include ':qatoolkit-inspector-details'
+include ':qatoolkit-ruler'
+include ':qatoolkit-settings'
+include ':qatoolkit-toolkitbar'
 
 [
         "bs-core",
