@@ -125,7 +125,7 @@ percentage mode by clicking Percentage Mode icon. Note that this mode
 uses real screen size ignoring system insets such as status/navigation
 bars, display cutouts, etc.
 
-![Inspector Tool, percentage mode off](/readme/inspector_1.png)
+![Inspector Tool, percentage mode off](/readme/inspector_1.png)&nbsp;
 ![Inspector Tool, percentage mode on](/readme/inspector_5.png)
 
 #### Zoom and Pan
@@ -177,6 +177,23 @@ explaining why.
 ![Inspector Tool, CalendarView](/readme/inspector_advanced_1.png)&nbsp;
 ![Inspector Tool, selected virtual view](/readme/inspector_advanced_3.png)  
 ![Inspector Tool, information message](/readme/inspector_advanced_2.png)
+
+#### Dimension and Color mods
+
+Both dimension and color attributes have different display modes.
+By clicking an attribute you can cycle through available modes. Size
+dimensions (like width, height, margin, padding, etc.) can be displayed
+as DP or PX and font sizes as SP and PX.
+
+![Inspector Tool, font size as SP](/readme/inspector_advanced_17.png)&nbsp;
+![Inspector Tool, font size as PX](/readme/inspector_advanced_13.png)
+
+Colors can be displayed as HEX string or ARGB values
+(both integer and float).
+
+![Inspector Tool, color as HEX](/readme/inspector_advanced_16.png)&nbsp;
+![Inspector Tool, color as ARGB integer](/readme/inspector_advanced_14.png)  
+![Inspector Tool, color as ARGB float](/readme/inspector_advanced_15.png)
 
 Note: advanced inspection supports only `View`-based layouts.
 This means that Jetpack Compose layouts will have only basic information
