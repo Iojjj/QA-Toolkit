@@ -3,7 +3,7 @@
 QA Toolkit is a set of tools for Software and QA Engineers to verify
 design implementation. It consists of two components: QA Toolkit
 application and QA Toolkit Bridge module. Both can be downloaded from
-releases page.
+[releases page](/releases).
 
 ## Application Setup
 
