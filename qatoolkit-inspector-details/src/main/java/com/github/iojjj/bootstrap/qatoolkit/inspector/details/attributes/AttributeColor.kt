@@ -20,7 +20,7 @@ import androidx.compose.ui.graphics.painter.ColorPainter
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.unit.dp
-import com.github.iojjj.bootstrap.pub.core.extensions.toIntAlpha
+import com.github.iojjj.bootstrap.pub.core.stdlib.toIntAlpha
 import com.github.iojjj.bootstrap.pub.qatoolkit.inspector.attribute.ColorAttribute
 import java.text.DecimalFormat
 

@@ -38,6 +38,7 @@ dependencies {
     implementation 'androidx.core:core-ktx'
     implementation 'androidx.lifecycle:lifecycle-process'
     implementation project(':bs-core')
+    implementation project(':bs-logger')
     implementation project(':bs-qatoolkit-bridge-core')
     implementation project(':bs-qatoolkit-inspector-layout')
 

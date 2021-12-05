@@ -1,6 +1,6 @@
 package com.github.iojjj.bootstrap.pub.qatoolkit.inspector.dsl
 
-import com.github.iojjj.bootstrap.pub.core.extensions.getOrDefaultCompat
+import com.github.iojjj.bootstrap.pub.core.collections.getOrDefaultCompat
 import com.github.iojjj.bootstrap.pub.qatoolkit.inspector.AttributeInspector
 import com.github.iojjj.bootstrap.pub.qatoolkit.inspector.CategoryInspector
 import com.github.iojjj.bootstrap.pub.qatoolkit.inspector.attribute.Attribute

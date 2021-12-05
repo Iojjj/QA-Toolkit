@@ -26,6 +26,8 @@ android {
     kotlinOptions {
         jvmTarget = jvmTargetVersion
         useIR = true
+
+        freeCompilerArgs += "-Xopt-in=kotlin.RequiresOptIn"
     }
 }
 

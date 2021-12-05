@@ -29,7 +29,7 @@ import androidx.navigation.compose.ComposeNavigator
 import androidx.navigation.compose.DialogNavigator
 import androidx.navigation.compose.currentBackStackEntryAsState
 import com.github.iojjj.bootstrap.pub.core.exhaustive
-import com.github.iojjj.bootstrap.pub.core.extensions.hasFlag
+import com.github.iojjj.bootstrap.pub.core.stdlib.hasFlag
 import com.github.iojjj.bootstrap.pub.core.view.accessibility.children
 import com.github.iojjj.bootstrap.pub.core.view.accessibility.isValid
 import com.github.iojjj.bootstrap.pub.qatoolkit.inspector.attribute.ATTRIBUTE_CHECKABLE

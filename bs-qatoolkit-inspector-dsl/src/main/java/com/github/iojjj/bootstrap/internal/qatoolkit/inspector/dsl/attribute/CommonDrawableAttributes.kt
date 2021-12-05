@@ -2,9 +2,9 @@ package com.github.iojjj.bootstrap.internal.qatoolkit.inspector.dsl.attribute
 
 import android.content.res.ColorStateList
 import android.graphics.drawable.Drawable
-import com.github.iojjj.bootstrap.pub.core.extensions.FLOAT_ALPHA_MAX
-import com.github.iojjj.bootstrap.pub.core.extensions.INT_ALPHA_RANGE
-import com.github.iojjj.bootstrap.pub.core.extensions.toFloatAlpha
+import com.github.iojjj.bootstrap.pub.core.stdlib.FLOAT_ALPHA_MAX
+import com.github.iojjj.bootstrap.pub.core.stdlib.INT_ALPHA_RANGE
+import com.github.iojjj.bootstrap.pub.core.stdlib.toFloatAlpha
 import com.github.iojjj.bootstrap.pub.qatoolkit.inspector.attribute.Attribute
 import com.github.iojjj.bootstrap.pub.qatoolkit.inspector.attribute.ColorAttribute.Companion.color
 import com.github.iojjj.bootstrap.pub.qatoolkit.inspector.attribute.CommonAttribute.Companion.float

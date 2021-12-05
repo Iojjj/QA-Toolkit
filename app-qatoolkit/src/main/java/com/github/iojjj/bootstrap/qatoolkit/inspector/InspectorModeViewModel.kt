@@ -7,9 +7,9 @@ import androidx.activity.OnBackPressedCallback
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.lifecycle.viewModelScope
-import com.github.iojjj.bootstrap.pub.core.coroutines.launchUnit
 import com.github.iojjj.bootstrap.pub.core.exhaustive
-import com.github.iojjj.bootstrap.pub.core.extensions.toIntAlpha
+import com.github.iojjj.bootstrap.pub.core.stdlib.toIntAlpha
+import com.github.iojjj.bootstrap.pub.coroutines.launchUnit
 import com.github.iojjj.bootstrap.pub.qatoolkit.inspector.layout.CategorizedAttributes
 import com.github.iojjj.bootstrap.qatoolkit.BridgeInfo
 import com.github.iojjj.bootstrap.qatoolkit.R

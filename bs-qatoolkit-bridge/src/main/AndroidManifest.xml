@@ -16,7 +16,7 @@
         <service
             android:name="com.github.iojjj.bootstrap.internal.qatoolkit.bridge.QaToolkitBridgeService"
             android:enabled="true"
-            android:foregroundServiceType="connectedDevice"
+            android:foregroundServiceType="dataSync"
             android:exported="true"
             />
 

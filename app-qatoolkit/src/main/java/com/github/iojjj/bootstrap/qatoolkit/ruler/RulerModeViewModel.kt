@@ -4,8 +4,8 @@ import android.content.SharedPreferences
 import androidx.activity.OnBackPressedCallback
 import androidx.compose.ui.graphics.Color
 import androidx.lifecycle.viewModelScope
-import com.github.iojjj.bootstrap.pub.core.coroutines.launchUnit
 import com.github.iojjj.bootstrap.pub.core.exhaustive
+import com.github.iojjj.bootstrap.pub.coroutines.launchUnit
 import com.github.iojjj.bootstrap.qatoolkit.core.DimensionType
 import com.github.iojjj.bootstrap.qatoolkit.core.Orientation
 import com.github.iojjj.bootstrap.qatoolkit.getColor

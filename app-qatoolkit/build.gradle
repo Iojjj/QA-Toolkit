@@ -29,6 +29,7 @@ dependencies {
 
     implementation project(':bs-android-reflection')
     implementation project(':bs-core')
+    implementation project(':bs-coroutines')
 
     implementation project(':bs-qatoolkit-bridge-core')
     implementation project(':bs-qatoolkit-inspector-layout')

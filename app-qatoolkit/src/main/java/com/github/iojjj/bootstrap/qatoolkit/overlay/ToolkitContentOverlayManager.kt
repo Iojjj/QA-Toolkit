@@ -47,8 +47,8 @@ import androidx.savedstate.SavedStateRegistryController
 import androidx.savedstate.SavedStateRegistryOwner
 import androidx.savedstate.ViewTreeSavedStateRegistryOwner
 import com.github.iojjj.bootstrap.pub.core.exhaustive
-import com.github.iojjj.bootstrap.pub.core.extensions.hasFlag
-import com.github.iojjj.bootstrap.pub.core.view.delayUntilNextLayout
+import com.github.iojjj.bootstrap.pub.core.stdlib.hasFlag
+import com.github.iojjj.bootstrap.pub.coroutines.view.delayUntilNextLayout
 import com.github.iojjj.bootstrap.qatoolkit.R
 import com.github.iojjj.bootstrap.qatoolkit.compose.core.unit.maxDimension
 import com.github.iojjj.bootstrap.qatoolkit.compose.core.unit.minDimension

@@ -53,7 +53,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import com.github.iojjj.bootstrap.pub.core.exhaustive
-import com.github.iojjj.bootstrap.pub.core.view.delayUntilNextLayout
+import com.github.iojjj.bootstrap.pub.coroutines.view.delayUntilNextLayout
 import com.github.iojjj.bootstrap.qatoolkit.compose.core.unit.maxDimension
 import com.github.iojjj.bootstrap.qatoolkit.core.Orientation
 import com.github.iojjj.bootstrap.qatoolkit.grid.GridModeViewModel

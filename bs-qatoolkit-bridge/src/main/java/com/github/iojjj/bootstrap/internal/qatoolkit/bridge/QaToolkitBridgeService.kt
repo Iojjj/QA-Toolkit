@@ -7,7 +7,7 @@ import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import androidx.core.view.children
 import com.github.iojjj.bootstrap.pub.core.exhaustive
-import com.github.iojjj.bootstrap.pub.core.logger.Logger
+import com.github.iojjj.bootstrap.pub.logger.Logger
 import com.github.iojjj.bootstrap.pub.qatoolkit.inspector.layout.LayoutInspector
 import com.github.iojjj.bootstrap.qatoolkit.bridge.R
 import com.github.iojjj.bootstrap.qatoolkit.pub.bridge.core.BridgeMessage
@@ -78,10 +78,10 @@ internal class QaToolkitBridgeService : CommunicationService<BridgeMessage>(Brid
                 }
             }
             is ClientMessage.UnsupportedType -> {
-                Logger.DEFAULT.error { "Received service request of unsupported type: ${message.request}." }
+                Logger.Default.error { "Received service request of unsupported type: ${message.request}." }
             }
             is ClientMessage.Unknown -> {
-                Logger.DEFAULT.error { "Received unknown message: ${message.message}." }
+                Logger.Default.error { "Received unknown message: ${message.message}." }
             }
         }
     }

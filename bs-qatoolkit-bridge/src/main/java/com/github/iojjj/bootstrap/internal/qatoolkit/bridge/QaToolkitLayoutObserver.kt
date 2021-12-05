@@ -14,7 +14,7 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleEventObserver
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.ProcessLifecycleOwner
-import com.github.iojjj.bootstrap.pub.core.application.ActivityLifecycleCallbacksAdapter
+import com.github.iojjj.bootstrap.pub.core.app.ActivityLifecycleCallbacksAdapter
 import com.github.iojjj.bootstrap.pub.core.exhaustive
 import com.github.iojjj.bootstrap.qatoolkit.bridge.R
 import java.lang.ref.WeakReference

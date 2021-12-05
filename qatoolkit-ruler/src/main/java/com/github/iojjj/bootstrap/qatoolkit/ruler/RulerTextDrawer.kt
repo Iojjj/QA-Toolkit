@@ -19,7 +19,7 @@ import androidx.compose.ui.unit.Density
 import androidx.compose.ui.unit.IntSize
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.github.iojjj.bootstrap.pub.core.extensions.INT_ALPHA_RANGE
+import com.github.iojjj.bootstrap.pub.core.stdlib.INT_ALPHA_RANGE
 import com.github.iojjj.bootstrap.qatoolkit.compose.core.graphics.drawscope.drawTextAbove
 import com.github.iojjj.bootstrap.qatoolkit.compose.core.graphics.drawscope.drawTextAboveAndBelow
 import com.github.iojjj.bootstrap.qatoolkit.compose.core.graphics.drawscope.drawTextBelow
