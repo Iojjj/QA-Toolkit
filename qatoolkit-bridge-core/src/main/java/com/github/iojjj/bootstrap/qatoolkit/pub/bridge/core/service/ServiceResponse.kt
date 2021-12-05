@@ -4,7 +4,6 @@ import android.os.Message
 import android.os.Parcelable
 import com.github.iojjj.bootstrap.pub.core.os.makeBundle
 import com.github.iojjj.bootstrap.pub.core.os.withCurrentThreadContextClassLoader
-import kotlinx.parcelize.Parcelize
 
 object ServiceResponse {
 
@@ -31,7 +30,4 @@ object ServiceResponse {
             }
         }
     }
-
-    @Parcelize
-    object Unit : Parcelable
 }
