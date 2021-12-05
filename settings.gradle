@@ -26,7 +26,6 @@ include 'qatoolkit-inspector-appcompat'
         "bs-core",
         "bs-coroutines",
         "bs-logger",
-        "bs-android-reflection",
 ].each {
     include ":$it"
     project(":$it").projectDir = file("../Bootstrap/$it")

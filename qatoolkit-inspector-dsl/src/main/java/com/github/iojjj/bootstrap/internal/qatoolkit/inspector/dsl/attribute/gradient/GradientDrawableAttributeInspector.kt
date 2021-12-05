@@ -8,8 +8,8 @@ import android.os.Build
 import com.github.iojjj.bootstrap.internal.qatoolkit.inspector.dsl.Property
 import com.github.iojjj.bootstrap.internal.qatoolkit.inspector.dsl.attribute.Corners
 import com.github.iojjj.bootstrap.internal.qatoolkit.inspector.dsl.attribute.Shape
-import com.github.iojjj.bootstrap.qatoolkit.pub.bridge.core.reflection.ReflectionApi
-import com.github.iojjj.bootstrap.qatoolkit.pub.bridge.core.reflection.ReflectionField.Key
+import com.github.iojjj.bootstrap.internal.qatoolkit.inspector.dsl.reflection.ReflectionApi
+import com.github.iojjj.bootstrap.internal.qatoolkit.inspector.dsl.reflection.ReflectionField.Key
 
 internal interface GradientDrawableAttributeInspector {
 

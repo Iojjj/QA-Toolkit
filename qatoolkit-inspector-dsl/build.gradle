@@ -4,7 +4,6 @@ apply plugin: "kotlin-parcelize"
 dependencies {
 
     implementation 'androidx.core:core-ktx'
-    implementation project(':bs-android-reflection')
     implementation project(":bs-core")
     implementation project(':qatoolkit-inspector-core')
     implementation project(':qatoolkit-inspector-attribute')

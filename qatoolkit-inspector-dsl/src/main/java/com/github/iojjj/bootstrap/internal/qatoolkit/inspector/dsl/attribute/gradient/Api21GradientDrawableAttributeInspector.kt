@@ -21,7 +21,7 @@ import com.github.iojjj.bootstrap.internal.qatoolkit.inspector.dsl.attribute.gra
 import com.github.iojjj.bootstrap.internal.qatoolkit.inspector.dsl.attribute.gradient.GradientDrawableAttributeInspector.Companion.GRADIENT_DRAWABLE_STATE_FIELD_THICKNESS_RATIO
 import com.github.iojjj.bootstrap.internal.qatoolkit.inspector.dsl.attribute.gradient.GradientDrawableAttributeInspector.Companion.GRADIENT_DRAWABLE_STATE_FIELD_USE_LEVEL
 import com.github.iojjj.bootstrap.internal.qatoolkit.inspector.dsl.attribute.gradient.GradientDrawableAttributeInspector.Companion.field
-import com.github.iojjj.bootstrap.qatoolkit.pub.bridge.core.reflection.ReflectionField
+import com.github.iojjj.bootstrap.internal.qatoolkit.inspector.dsl.reflection.ReflectionField
 
 @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
 internal open class Api21GradientDrawableAttributeInspector : GradientDrawableAttributeInspector {
