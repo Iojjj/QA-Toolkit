@@ -2,6 +2,7 @@ plugins {
     id 'com.android.library'
     id 'kotlin-android'
     id 'kotlin-parcelize'
+    id 'kotlin-kapt'
 }
 
 android {
@@ -34,6 +35,13 @@ android {
 dependencies {
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib"
-    implementation project(':bs-core')
-    implementation project(':bs-qatoolkit-inspector-layout')
+    implementation 'androidx.core:core-ktx'
+    implementation project(':bs-android-reflection')
+    implementation project(":bs-core")
+    implementation project(':qatoolkit-inspector-core')
+    implementation project(':qatoolkit-inspector-attribute')
+}
+
+kapt {
+    correctErrorTypes true
 }

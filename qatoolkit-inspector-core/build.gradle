@@ -36,10 +36,12 @@ dependencies {
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib"
     implementation 'androidx.core:core-ktx'
-    implementation project(':bs-android-reflection')
+    implementation 'androidx.appcompat:appcompat'
     implementation project(":bs-core")
-    implementation project(":bs-qatoolkit-inspector-core")
-    implementation project(":bs-qatoolkit-inspector-attribute")
+    implementation project(":qatoolkit-inspector-attribute")
+
+    compileOnly 'org.atteo.classindex:classindex'
+    kapt 'org.atteo.classindex:classindex'
 }
 
 kapt {

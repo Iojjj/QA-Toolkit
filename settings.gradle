@@ -13,14 +13,14 @@ include ':qatoolkit-ruler'
 include ':qatoolkit-settings'
 include ':qatoolkit-toolkitbar'
 
-include 'bs-qatoolkit-bridge'
-include 'bs-qatoolkit-bridge-core'
-include 'bs-qatoolkit-inspector-core'
-include 'bs-qatoolkit-inspector-attribute'
-include 'bs-qatoolkit-inspector-dsl'
-include 'bs-qatoolkit-inspector-layout'
-include 'bs-qatoolkit-inspector-android'
-include 'bs-qatoolkit-inspector-appcompat'
+include 'qatoolkit-bridge'
+include 'qatoolkit-bridge-core'
+include 'qatoolkit-inspector-core'
+include 'qatoolkit-inspector-attribute'
+include 'qatoolkit-inspector-dsl'
+include 'qatoolkit-inspector-layout'
+include 'qatoolkit-inspector-android'
+include 'qatoolkit-inspector-appcompat'
 
 [
         "bs-core",

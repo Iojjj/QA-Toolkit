@@ -16,5 +16,5 @@ dependencies {
     implementation 'androidx.appcompat:appcompat'
     implementation "androidx.constraintlayout:constraintlayout"
 
-    debugImplementation project(':bs-qatoolkit-bridge')
+    debugImplementation project(':qatoolkit-bridge')
 }

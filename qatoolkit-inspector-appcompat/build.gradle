@@ -37,10 +37,10 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib"
     implementation "androidx.appcompat:appcompat"
     implementation project(":bs-core")
-    implementation project(":bs-qatoolkit-inspector-core")
-    implementation project(":bs-qatoolkit-inspector-attribute")
-    implementation project(":bs-qatoolkit-inspector-dsl")
-    implementation project(":bs-qatoolkit-inspector-android")
+    implementation project(':qatoolkit-inspector-core')
+    implementation project(":qatoolkit-inspector-attribute")
+    implementation project(":qatoolkit-inspector-dsl")
+    implementation project(':qatoolkit-inspector-android')
 
     compileOnly 'org.atteo.classindex:classindex'
     kapt 'org.atteo.classindex:classindex'

@@ -37,9 +37,9 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib"
     implementation 'androidx.annotation:annotation'
     implementation project(":bs-core")
-    implementation project(":bs-qatoolkit-inspector-core")
-    implementation project(":bs-qatoolkit-inspector-attribute")
-    implementation project(":bs-qatoolkit-inspector-dsl")
+    implementation project(':qatoolkit-inspector-core')
+    implementation project(":qatoolkit-inspector-attribute")
+    implementation project(":qatoolkit-inspector-dsl")
 
     compileOnly 'org.atteo.classindex:classindex'
     kapt 'org.atteo.classindex:classindex'

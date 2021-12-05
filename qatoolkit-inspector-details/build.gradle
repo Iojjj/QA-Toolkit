@@ -3,8 +3,8 @@ apply from: "$projectDir/../script-compose.gradle"
 
 dependencies {
     implementation project(':bs-core')
-    implementation project(':bs-qatoolkit-inspector-attribute')
-    implementation project(':bs-qatoolkit-inspector-layout')
+    implementation project(':qatoolkit-inspector-attribute')
+    implementation project(':qatoolkit-inspector-layout')
     implementation project(':qatoolkit-core')
     implementation project(':qatoolkit-compose-core')
     implementation project(':qatoolkit-colorpicker')

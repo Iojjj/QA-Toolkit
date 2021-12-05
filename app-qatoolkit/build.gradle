@@ -31,7 +31,7 @@ dependencies {
     implementation project(':bs-core')
     implementation project(':bs-coroutines')
 
-    implementation project(':bs-qatoolkit-bridge-core')
-    implementation project(':bs-qatoolkit-inspector-layout')
-    implementation project(':bs-qatoolkit-inspector-attribute')
+    implementation project(':qatoolkit-bridge-core')
+    implementation project(':qatoolkit-inspector-layout')
+    implementation project(':qatoolkit-inspector-attribute')
 }
